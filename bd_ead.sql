@@ -288,13 +288,50 @@ as select
         tbl_livro.ds_resumo_obra,
         tbl_livro.ds_capa,
         tbl_livro.sg_lancamento
-from tbl_livro inner join tbl_autor -- fazendo a junção de tableas a partir do elemento em comum descrito abaixo
+from tbl_livro 
+inner join tbl_autor -- fazendo a junção de tableas a partir do elemento em comum descrito abaixo
 	on tbl_livro.cd_autor = tbl_autor.cd_autor -- ponto em comum entre tabelas
 inner join tbl_categoria
 	on tbl_livro.cd_categoria = tbl_categoria.cd_categoria;
     
 select * from vw_livro; -- Bem melhor
 
+select nm_livro, vl_preco, ds_capa from vw_livro where ds_categoria = 'design';
+
 create user 'ead'@'localhost' identified with mysql_native_password by '123456';
 grant all privileges on db_ead.* to 'ead'@'localhost' with grant option;
+
+
+create table tbl_usuario(
+	cd_usuario int primary key auto_increment,
+    nm_usuario varchar(50) not null,
+    ds_email varchar(80) not null,
+    ds_senha varchar(6) not null,
+    ds_status boolean not null,
+    ds_endereco varchar(80) not null,
+    ds_cidade varchar(30) not null,
+    no_cep char (9) not null
+) default charset utf8;
+
+select * from tbl_usuario;
+
+describe tbl_usuario;
+
+insert into tbl_usuario
+values(default, 'Draken', 'draken@gmail.com', '123456', '1', 'rua tokyo', 'tokyo', '05264050' );
+
+insert into tbl_usuario
+values(default, 'Mikey', 'mikey@gmail.com', '123456', '0', 'rua tokyo1', 'tokyo1', '05264051' );
+
+insert into tbl_usuario
+values(default, 'Mitsuia', 'mitsuia@gmail.com', '123456', '0', 'rua tokyo2', 'tokyo2', '05264052' );
+
+
+
+
+select * from tbl
+
+
+
+
 

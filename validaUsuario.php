@@ -9,8 +9,16 @@
 
     if($consulta->rowCount() == 1){
         $exibeUsuario = $consulta->fetch(PDO::FETCH_ASSOC);
-        $_SESSION['ID'] = $exibeUsuario['cd_usuario'];
-        header('location:index.php');
+
+        if($exibeUsuario['ds_status'] == 0){
+            $_SESSION['ID'] = $exibeUsuario['cd_usuario'];
+            $_SESSION['Status'] = 0;
+            header('location:index.php');
+        }else{
+            $_SESSION['ID'] = $exibeUsuario['cd_usuario'];
+            $_SESSION['Status'] = 1;
+            header('location:index.php');
+        }
     }else{
         header('location:erro.php');
     }
