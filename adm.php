@@ -60,12 +60,13 @@
 
                 </a>
 
+                <a href="lista.php">
+                    <button type="submit" class="btn btn-block btn-lg btn-warning">
 
-                <button type="submit" class="btn btn-block btn-lg btn-warning">
+                        Alterar / Excluir Produto
 
-                    Alterar / Excluir Produto
-
-                </button>
+                    </button>
+                </a>
 
 
                 <button type="submit" class="btn btn-block btn-lg btn-success">
