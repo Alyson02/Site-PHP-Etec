@@ -72,12 +72,13 @@
                         </a>
                     </div>
                     <div class="text-center" style="margin-top: 5px; margin-bottom: 5px;">
-
+                        
                         <?php if($exibe['qt_estoque'] > 0) {?>
-                        <button class="btn btn-lg btn-block btn-info">
-                            <span class="glyphicon glyphicon-shopping-cart"> Comprar</span>
-                        </button>
-
+                            <a href="carrinho.php?cd=<?php echo $exibe['cd_livro'];?>">
+                                <button class="btn btn-lg btn-block btn-info">
+                                    <span class="glyphicon glyphicon-shopping-cart"> Comprar</span>
+                                </button>
+                            </a>
                         <?php }else{ ?>
                         <button class="btn btn-lg btn-block btn-danger" disabled>
                             <span class="glyphicon glyphicon-remove-circle"> Indisponivel</span>
