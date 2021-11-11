@@ -75,13 +75,14 @@
 
                 </button>
 
+                <a href="sair.php">
 
+                    <button type="submit" class="btn btn-block btn-lg btn-danger">
 
-                <button type="submit" class="btn btn-block btn-lg btn-danger">
+                        Sair da àrea administrativa
 
-                    Sair da àrea administrativa
-
-                </button>
+                    </button>
+                </a>
 
 
 

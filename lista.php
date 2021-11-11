@@ -30,7 +30,7 @@
 
     <?php
 	
-	session_start();	
+    	
 	
 // se a sessão id estiver vazia ou se a sessão estatus for diferente de adm entao execute
 	if(empty($_SESSION['Status']) || $_SESSION['Status'] != 1){

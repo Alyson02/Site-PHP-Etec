@@ -329,7 +329,19 @@ values(default, 'Mitsuia', 'mitsuia@gmail.com', '123456', '0', 'rua tokyo2', 'to
 
 
 
-select * from tbl
+select cd_livro ,ds_capa from tbl_livro;
+
+update tbl_livro 
+set ds_capa = 'Comece com o principal banco de dados open source do mercado.jpg'
+where cd_livro = 2;
+
+
+
+delete from tbl_livro where cd_livro = 16;
+
+
+
+
 
 
 
