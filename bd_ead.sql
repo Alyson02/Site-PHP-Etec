@@ -19,6 +19,21 @@ create table tbl_autor
 )
 default charset utf8;
 
+create table tbl_venda(
+	cd_venda int(11) primary key auto_increment,
+    no_ticket varchar(13) not null,
+    cd_cliente int(11) not null,
+    cd_livro int(11) not null,
+    qt_livro int(11) not null,
+    vl_item decimal(10,2) not null,
+    vl_total_item decimal(10,2) generated always as ((qt_livro * vl_item)) virtual,
+    dt_venda date not null
+);
+
+insert into tbl_venda(no_ticket, cd_cliente, cd_livro, qt_livro, vl_item, dt_venda)
+values(111222333,2,2,2,52.20,'2020-10-02');
+
+select * from tbl_venda;
 
 create table tbl_livro -- cria tabela
 (	
@@ -338,6 +353,22 @@ where cd_livro = 2;
 
 
 delete from tbl_livro where cd_livro = 16;
+
+-- Vw para pegar informações da tabela venda e livro ao mesmo tempo
+
+create view vw_Venda
+as select 
+		tbl_venda.no_ticket,
+        tbl_venda.cd_cliente,
+        tbl_venda.dt_venda,
+        tbl_livro.nm_livro,
+        tbl_venda.qt_livro,
+        tbl_venda.vl_total_item
+from tbl_venda inner join tbl_livro
+on tbl_venda.cd_livro = tbl_livro.cd_livro;
+
+
+
 
 
 

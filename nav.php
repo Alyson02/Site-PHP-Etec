@@ -37,6 +37,7 @@
                 <button type="submit" class="btn btn-default">Buscar</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"></span><span> Carrinho</span></a></li>
                 <li><a href="#">Contato</a></li>
                 <!--se estiver vazio a sessai ud, mostrar menu login-->
                 <?php if(empty($_SESSION['ID'])){ ?>
@@ -49,7 +50,8 @@
           $consulta_usuario = $cn->query("select nm_usuario from tbl_usuario where cd_usuario = '$_SESSION[ID]'");
           $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
            ?>
-                <li><a href="#"><span class="glyphicon glyphicon-user"> <?php echo $exibe_usuario['nm_usuario'] ?>
+
+                <li><a href="areaUser.php"><span class="glyphicon glyphicon-user"> <?php echo $exibe_usuario['nm_usuario'] ?>
                     </a>
                 </li>
                 <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</a></li>
